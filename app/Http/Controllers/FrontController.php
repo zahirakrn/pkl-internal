@@ -13,22 +13,22 @@ class FrontController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        return view('front.contact');
     }
 
     public function shop()
     {
-        return view('shop');
+        return view('front.shop');
     }
 
     public function cart()
     {
-        return view('cart');
+        return view('front.cart');
     }
 
     public function checkout()
     {
-        return view('checkout');
+        return view('front.checkout');
     }
     
     public function track()
