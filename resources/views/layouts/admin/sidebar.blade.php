@@ -20,7 +20,13 @@
               </div>
               <div class="menu-title">Dashboard</div>
             </a>
-           
+            <li>
+              <a href="{{url('laporan.index')}}">
+                <div class="parent-icon"><i class="material-icons-outlined"></i>
+                </div>
+                <div class="menu-title">laporan</div>
+              </a>
+            </li>
           </li>
           <li>
             <a href="{{route('user.index')}}" >

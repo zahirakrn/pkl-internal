@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
     //untuk Route Backend lainnya
     Route::resource('user', App\Http\Controllers\UsersController::class);
+    Route::resource('barang', App\Http\Controllers\barangController::class);
 });
 
 //Route Frontend
