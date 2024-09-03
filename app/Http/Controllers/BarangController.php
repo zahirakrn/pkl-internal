@@ -40,12 +40,14 @@ class barangcontroller extends Controller
     {
         $this->validate($request, [
             'nama_barang' => 'required',
-            'tanggal' => 'required ',
+            'jumlah' => 'required ',
+            'keterangan' => 'required|boolean',
         ]);
 
         $barangs = new barang();
         $barangs->nama_barang = $request->nama_barang;
-        $barangs->tanggal = $request->tanggal;
+        $barangs->jumlah = $request->jumlah;
+        $barangs->keterangan = $request->keterangan;
         $barangs->save();
         Alert::success('Success', 'Data Berhasil Disimpan');
         return redirect()->route('barang.index');
@@ -87,15 +89,21 @@ class barangcontroller extends Controller
     {
         $this->validate($request, [
             'nama_barang' => 'required',
-            'tanggal' => 'required ',
+            'jumlah' => 'required ',
+            'keterangan' => 'required|boolean',
         ]);
 
-        $barangs = Barang::findOrFail($id); ;
+        $barangs = Barang::findOrFail($id); 
         $barangs->nama_barang = $request->nama_barang;
-        $barangs->tanggal = $request->tanggal;
+        $barangs->jumlah = $request->jumlah;
+        $barangs->keterangan = $request->keterangan;
         $barangs->save();
         Alert::success('Success', 'Data Berhasil Disimpan');
         return redirect()->route('barang.index');
+
+    // pengurangan stok
+        $barangs = Barang::findOrFail($id);
+        
     }
 
     /**

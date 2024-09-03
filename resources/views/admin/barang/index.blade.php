@@ -33,7 +33,9 @@
 									<tr>
                                         <th>No</th>
 										<th>Nama_Barang</th>
-										<th>Tanggal</th>
+										<th>Jumlah</th>
+										<th>Katerangan</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -42,7 +44,8 @@
 										<tr>
                                             <td>{{$i++}}</td>
                                             <td>{{$data->nama_barang}}</td>
-                                            <td>{{$data->tanggal}}</td>		
+                                            <td>{{$data->jumlah}}</td>		
+											<td>{{$data->keterangan ? 'Barang Keluar' : 'Barang Masuk'}}</td>	
                                             <td>
                                                 <form action="{{route('barang.destroy',$data->id)}}" method="post">
                                                     @csrf
@@ -61,7 +64,6 @@
 														Delete
 												</button> --}}
 												<a href="{{ route('barang.destroy', $data->id) }}" class="btn btn-grd-danger" data-confirm-delete="true">Delete</a>
-											
                                                 </form>
                                             </td>
                                         </tr>

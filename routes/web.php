@@ -34,6 +34,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     //untuk Route Backend lainnya
     Route::resource('user', App\Http\Controllers\UsersController::class);
     Route::resource('barang', App\Http\Controllers\barangController::class);
+    Route::resource('barangmasuk', App\Http\Controllers\BarangMasukController::class);
+    Route::resource('barangkeluar', App\Http\Controllers\BarangKeluarController::class);
+    Route::resource('pinjaman', App\Http\Controllers\PinjamanController::class);
+    Route::resource('pengembalian', App\Http\Controllers\PengembalianController::class);
 });
 
 //Route Frontend
